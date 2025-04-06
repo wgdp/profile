@@ -1,0 +1,10 @@
+---
+interface Props {
+  text: string
+	link: string
+}
+
+const { text, link } = Astro.props
+---
+
+<a class="text-orange-300 border-b hover:text-orange-200" href={ link } target="_blank">{ text }</a>

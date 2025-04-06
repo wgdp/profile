@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --color-main: color(display-p3 0.36543 0.62215 0.58418);
+  --color-sub: color(display-p3 0.98023 0.99861 0.88637);
+}

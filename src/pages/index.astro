@@ -1,11 +1,45 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import LinkCard from '../components/LinkCard.astro';
+import H from '../components/H.astro';
+import Link from '../components/Link.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<div class="mx-auto w-full h-full my-auto md:max-w-4xl">
+		<div class="flex flex-col mt-30 text-sub px-6 md:px-10">
+			<div class="bg-main rounded-4xl shadow-sm">
+				<div class="flex justify-center relative">
+					<img src="https://pbs.twimg.com/profile_images/1453387376550580224/EmkS3YYf_400x400.png" alt="Icon" class="w-24 h-24 absolute -top-12 rounded-full border border-4 md:border-5">
+				</div>
+				<div class="m-4 mt-10 md:m-12 flex flex-col gap-12">
+					<div class="flex flex-col justify-center mx-auto mt-5">
+						<h1 class="text-2xl font-bold">うぃどら / 息絶えたやつ</h1>
+						<span class="text-sm mx-auto">@whigdrap</span>
+					</div>
+					<div class="md:mx-12 text-sm md:text-base">
+						<p>ゲームと散歩が好きです。</p>
+					</div>
+					<H title="About"/>
+					<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+						<p>こんにちは！うぃどら（息絶えたやつ）と申します。</p>
+						<p>私はソフトウェアエンジニアとして働いていて、特にバックエンド周りの開発や社内向けのCI/CD環境の整備を行っています。また、フロントエンドやデザインにも少し興味があるため、このプロフィールサイトは自分でデザインしCloudflare Pagesでホスティングしています。（<Link link="https://potofu.me/ja" text="POTOFU"/> Likeなデザインにしてみました）</p>
+						<p>ゲームが大好きで、Minecraftやモンハン、崩壊スターレイルなどのメジャータイトルはもちろん、インディーゲームもよく遊んでいます。（<Link link="https://steamcommunity.com/id/46498888/" text="Steam"/>）</p>
+						<p>よろしくお願いします！</p>
+					</div>
+					<H title="Link"/>
+					<div class="grid grid-cols-1 md:grid-cols-3 md:gap-3 gap-2 md:gap-y-10 text-main md:mx-12">
+						<LinkCard title="X" subtitle="情報収集用なのであんまり呟いてないです。" url="https://x.com/yadonantoka" imgUrl="/x.png" />
+						<LinkCard title="GitHub" subtitle="ブログやプロフィールのソースコードを置いてます。" url="https://github.com/wgdp" imgUrl="/github.png" />
+						<LinkCard title="BlueSky" subtitle="作っただけで今のところ放置中。" url="https://bsky.app/profile/wgdp.dev" imgUrl="/bluesky.png" />
+						<LinkCard title="Blog" subtitle="毎月の振り返りなどを投稿しています。" url="https://wgdp.dev" imgUrl="https://wgdp.dev/favicon.png" />
+					</div>
+					<H title="Contact"/>
+					<div class="md:mx-12 flex flex-col gap-6 mb-5 text-sm md:text-base">
+						<p>XのDMにて連絡お願いします。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
 </Layout>

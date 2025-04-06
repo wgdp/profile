@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string
+  subtitle: string
+  url: string
+  imgUrl: string
+}
+
+const { title, subtitle, url, imgUrl } = Astro.props
+---
+<a href={ url } target="_blank" class="flex md:flex-col bg-sub h-18 md:h-full rounded-xl md:rounded-4xl px-2 md:px-6 pb-1 md:pb-5">
+  <div class="flex justify-center my-auto relative md:mb-10">
+    <img src={ imgUrl } alt="Icon" class="p-1 w-12 h-12 rounded-full bg-white border border-2 md:absolute md:-top-6 md:border-3">
+  </div>
+  <div class="flex flex-col md:gap-3 gap-1 py-3 h-full md:w-full mx-auto">
+    <span class="text-sm md:text-md font-bold mx-auto">{ title }</span>
+    <span class="text-xs mx-auto">{ subtitle }</span>
+  </div>
+</a>
