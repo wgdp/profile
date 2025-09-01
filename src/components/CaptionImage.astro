@@ -1,0 +1,17 @@
+---
+import { makeImageUrl } from '../util/image'
+
+interface Props {
+  src: string
+  alt: string
+  textSize?: string
+}
+const { src, alt, textSize } = Astro.props
+const size = textSize || "text-xs"
+
+const imageUrl = makeImageUrl(src);
+---
+<div class="grid grid-cols-1 justify-center me-20 md:me-40">
+    <div><img src={imageUrl} alt={alt} loading="lazy"></div>
+    <div class={"italic text-gray-300 " + size}>{alt}</div>
+</div>

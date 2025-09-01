@@ -1,45 +1,191 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LinkCard from '../components/LinkCard.astro';
-import H from '../components/H.astro';
+import OgpLinkCard from '../components/OgpLinkCard.astro';
+import H2 from '../components/H2.astro';
+import H3 from '../components/H3.astro';
+import H4 from '../components/H4.astro';
+import CaptionImage from '../components/CaptionImage.astro';
 import Link from '../components/Link.astro';
 ---
 
 <Layout>
-	<div class="mx-auto w-full h-full my-auto md:max-w-4xl">
+	<div class="mx-auto w-full h-full mt-auto md:max-w-4xl">
 		<div class="flex flex-col mt-30 text-sub px-6 md:px-10">
-			<div class="bg-main rounded-4xl shadow-sm">
+			<div class="bg-main rounded-4xl">
 				<div class="flex justify-center relative">
-					<img src="https://pbs.twimg.com/profile_images/1453387376550580224/EmkS3YYf_400x400.png" alt="Icon" class="w-24 h-24 absolute -top-12 rounded-full border border-4 md:border-5">
+					<img src="https://pbs.twimg.com/profile_images/1958566656441294850/oZRjdqet_400x400.jpg" alt="Icon" class="w-24 h-24 absolute -top-12 rounded-full border border-4 md:border-5">
 				</div>
 				<div class="m-4 mt-10 md:m-12 flex flex-col gap-12">
 					<div class="flex flex-col justify-center mx-auto mt-5">
-						<h1 class="text-2xl font-bold">うぃどら / 息絶えたやつ</h1>
+						<h1 class="text-2xl font-bold">uidola / 息絶えたやつ</h1>
 						<span class="text-sm mx-auto">@whigdrap</span>
 					</div>
 					<div class="md:mx-12 text-sm md:text-base">
 						<p>ゲームと散歩が好きです。</p>
+						<p>はなまるうどんを食べて駆動します。</p>
 					</div>
-					<H title="About"/>
+					<H2 title="About Me"/>
 					<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
-						<p>こんにちは！うぃどら（息絶えたやつ）と申します。</p>
-						<p>私はソフトウェアエンジニアとして働いていて、特にバックエンド周りの開発や社内向けのCI/CD環境の整備を行っています。また、フロントエンドやデザインにも少し興味があるため、このプロフィールサイトは自分でデザインしCloudflare Pagesでホスティングしています。（<Link link="https://potofu.me/ja" text="POTOFU"/> Likeなデザインにしてみました）</p>
-						<p>ゲームが大好きで、Minecraftやモンハン、崩壊スターレイルなどのメジャータイトルはもちろん、インディーゲームもよく遊んでいます。（<Link link="https://steamcommunity.com/id/46498888/" text="Steam"/>）</p>
+						<p>Hi! I'm uidola!</p>
+						<p>ゲームが大好きで、Minecraftやモンハンなどのメジャーなコンシューマー、PCゲームはもちろん、崩壊スターレイルや鳴潮などのソーシャルゲーム、Steamの名作、謎インディーゲームもよく遊んでいます。（<Link link="https://steamcommunity.com/id/46498888/" text="Steam"/>）</p>
 						<p>よろしくお願いします！</p>
 					</div>
-					<H title="Link"/>
+					<H2 title="About Tech"/>
+					<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+						<p>私はソフトウェアエンジニアとして働いていて、この<Link link="https://potofu.me/ja" text="POTOFU"/> Likeなプロフィールサイトも自分で作成しました。（<Link link="https://github.com/wgdp/profile" text="source"/>）</p>
+						<p>仕事ではC#, Go, Pythonを書いています。興味がある技術領域としてはCI/CD, バックエンド, インフラなどです。</p>
+					</div>
+					<H2 title="Contact"/>
+					<div class="md:mx-12 flex flex-col gap-6 mb-5 text-sm md:text-base">
+						<p>XのDMにて連絡お願いします。</p>
+						<p>受託開発等、お仕事の依頼は現在受け付けておりません。</p>
+					</div>
+					<H2 title="Link"/>
 					<div class="grid grid-cols-1 md:grid-cols-3 md:gap-3 gap-2 md:gap-y-10 text-main md:mx-12">
-						<LinkCard title="X" subtitle="情報収集用なのであんまり呟いてないです。" url="https://x.com/yadonantoka" imgUrl="/x.png" />
+						<LinkCard title="X" subtitle="メインアカウント（趣味用）" url="https://x.com/whigdrap" imgUrl="/x.png" />
+						<LinkCard title="X" subtitle="サブアカウント（基本つぶやきません）" url="https://x.com/yadonantoka" imgUrl="/x.png" />
 						<LinkCard title="GitHub" subtitle="ブログやプロフィールのソースコードを置いてます。" url="https://github.com/wgdp" imgUrl="/github.png" />
 						<LinkCard title="BlueSky" subtitle="作っただけで今のところ放置中。" url="https://bsky.app/profile/wgdp.dev" imgUrl="/bluesky.png" />
 						<LinkCard title="Blog" subtitle="毎月の振り返りなどを投稿しています。" url="https://blog.wgdp.dev" imgUrl="https://wgdp.dev/favicon.png" />
 					</div>
-					<H title="Contact"/>
-					<div class="md:mx-12 flex flex-col gap-6 mb-5 text-sm md:text-base">
-						<p>XのDMにて連絡お願いします。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<details class="mt-10">
+		<summary class="cursor-pointer mb-10 w-50 mx-auto text-lg md:text-xl font-bold text-center text-main bg-sub hover:text-sub hover:bg-main border border-main rounded-full px-5 py-2.5">
+			Read More
+		</summary>
+		<div class="">
+			<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 490" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,500 L 0,187 C 147.25,183.46428571428572 294.5,179.92857142857142 409,194 C 523.5,208.07142857142858 605.2500000000001,239.75 704,220 C 802.7499999999999,200.25 918.5,129.07142857142856 1044,115 C 1169.5,100.92857142857143 1304.75,143.96428571428572 1440,187 L 1440,500 L 0,500 Z" stroke="none" stroke-width="0" fill="#dbeafe" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
+		</div>
+		<div class="bg-gradient-to-b from-blue-100 via-slate-700 to-slate-900 h-150">
+			<div class="mx-auto w-full h-full mb-auto md:max-w-4xl">
+				<h2 class="relative text-xl font-bold text-center text-blue-900">
+					<span class="relative px-4">Diving...🤿</span>
+				</h2>
+			</div>
+		</div>
+		<div class="bg-slate-900 pb-20">
+			<div class="mx-auto w-full h-full mb-auto md:max-w-4xl">
+				<div class="flex flex-col text-sub px-6 md:px-10">
+					<div class="bg-slate-700 rounded-4xl">
+						<div class="flex justify-center relative">
+							<img src="https://pbs.twimg.com/profile_images/1958566656441294850/oZRjdqet_400x400.jpg" alt="Icon" class="w-24 h-24 absolute -top-12 rounded-full border border-4 border-slate-900 md:border-5">
+						</div>
+						<div class="m-4 mt-10 md:m-12 flex flex-col gap-12">
+							<div class="flex flex-col justify-center mx-auto mt-5">
+								<h1 class="text-2xl font-bold">Extra</h1>
+							</div>
+							<div class="md:mx-12 text-sm md:text-base">
+								<p>暇な人向け。</p>
+							</div>
+							<H2 title="My Favorite"/>
+							<H3 title="Game"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="Minecraft"/>
+								<OgpLinkCard url="https://www.minecraft.net/ja-jp"/> 
+								<H4 title="Death Stranding 2"/>
+								<OgpLinkCard url="https://www.playstation.com/ja-jp/games/death-stranding-2-on-the-beach/"/> 
+								<H4 title="Rocket League"/>
+								<OgpLinkCard url="https://store.steampowered.com/app/252950/Rocket_League/"/> 
+								<H4 title="Risk of Rain 2"/>
+								<OgpLinkCard url="https://store.steampowered.com/app/632360/Risk_of_Rain_2/"/> 
+								<H4 title="Super Hexagon"/>
+								<OgpLinkCard url="https://store.steampowered.com/app/221640/Super_Hexagon"/> 
+								<H4 title="崩壊スターレイル"/>
+								<OgpLinkCard url="https://www.youtube.com/@Houkaistarrail_jp"/> 
+								<H4 title="鳴潮"/>
+								<OgpLinkCard url="https://wutheringwaves.kurogames.com/jp/"/> 
+							</div>
+							<H3 title="Comic"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="宗教的プログラムの構造と解釈"/>
+								<OgpLinkCard url="https://shonenjumpplus.com/episode/3269754496358577604"/> 
+								<H4 title="トリコ"/>
+								<OgpLinkCard url="https://shonenjumpplus.com/episode/10833519556325021793"/> 
+								<H4 title="王様達のヴァイキング"/>
+								<OgpLinkCard url="https://www.amazon.co.jp/dp/4091853293"/> 
+								<H4 title="ゴーストフィクサーズ"/>
+								<OgpLinkCard url="https://shonenjumpplus.com/episode/9324103658562874562"/> 
+								<H4 title="テラリウム"/>
+								<OgpLinkCard url="https://shonenjumpplus.com/episode/17106567261852339358"/> 
+							</div>
+							<H3 title="TV series"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="SHERLOCK"/>
+								<OgpLinkCard url="https://filmarks.com/dramas/302/1113/vod"/> 
+							</div>
+							<H3 title="Movie"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="ウィリーズ・ワンダーランド"/>
+								<OgpLinkCard url="https://filmarks.com/movies/91658"/> 
+								<H4 title="RRR"/>
+								<OgpLinkCard url="https://filmarks.com/movies/100400"/> 
+								<H4 title="水の都の護神 ラティアスとラティオス"/>
+								<OgpLinkCard url="https://filmarks.com/movies/25655"/> 
+							</div>
+							<H3 title="Anime"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="サマータイムレンダ"/>
+								<OgpLinkCard url="https://filmarks.com/animes/2266/2917"/> 
+								<H4 title="Vivy"/>
+								<OgpLinkCard url="https://filmarks.com/animes/2453/3134"/> 
+								<H4 title="リコリス・リコイル"/>
+								<OgpLinkCard url="https://filmarks.com/animes/3327/4268"/> 
+								<H4 title="ノーゲーム・ノーライフ"/>
+								<OgpLinkCard url="https://filmarks.com/animes/338/500"/> 
+							</div>
+							<H3 title="Song"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="The Hamsterdance Song"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=p3G5IXn0K7A"/> 
+								<H4 title="Don't Be so Serious"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=D56XxiS_pJ0"/> 
+								<H4 title="しあわせになんてならないで"/>
+								<OgpLinkCard url="https://open.spotify.com/intl-ja/track/72vmaNXLCBClVUTJVHERqr?si=732c327e9aba4455"/> 
+								<H4 title="東京シュノーケル"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=0MtE7GZM36Q"/> 
+								<H4 title="Sayonara"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=O1y5yTvnSDo"/> 
+								<H4 title="死霊の夜桜"/>
+								<OgpLinkCard url="https://open.spotify.com/intl-ja/track/0QBHEvTH9cP3C69GmyLBRP?si=6afa164e9edd4682"/> 
+								<H4 title="Burnt Rice"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=JE1Gvzxfm1E"/> 
+								<H4 title="otherside"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=kK81m-A3qpU"/> 
+							</div>
+							<H3 title="Artist"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="Aiobahn"/>
+								<OgpLinkCard url="https://www.youtube.com/@Aiobahn"/> 
+								<H4 title="Yunomi"/>
+								<OgpLinkCard url="https://www.youtube.com/@Yunomichannel"/> 
+								<H4 title="Lena Raine"/>
+								<OgpLinkCard url="https://www.youtube.com/@LenaRaine"/> 
+								<H4 title="Low Roar"/>
+								<OgpLinkCard url="https://www.youtube.com/channel/UCyhqBfYUdAlECQtfmNIlbuw"/> 
+								<H4 title="C418"/>
+								<OgpLinkCard url="https://www.youtube.com/@C418"/> 
+							</div>
+							<H3 title="YouTuber"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="のばまん"/>
+								<OgpLinkCard url="https://www.youtube.com/@%E3%81%AE%E3%81%B0%E3%81%BE%E3%82%93%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%B9"/> 
+								<H4 title="としょ子"/>
+								<OgpLinkCard url="https://www.youtube.com/@TOSHOKO"/> 
+								<H4 title="DALT"/>
+								<OgpLinkCard url="https://www.youtube.com/@DirtyALT"/> 
+								<H4 title="ぽこピー"/>
+								<OgpLinkCard url="https://www.youtube.com/@pokopea"/> 
+								<H4 title="Gen"/>
+								<OgpLinkCard url="https://www.youtube.com/@suijiba"/> 
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-  </div>
+	</details>
 </Layout>
