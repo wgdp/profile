@@ -6,6 +6,7 @@ import H2 from '../components/H2.astro';
 import H3 from '../components/H3.astro';
 import H4 from '../components/H4.astro';
 import CaptionImage from '../components/CaptionImage.astro';
+import { makeImageUrl } from '../util/image';
 import Link from '../components/Link.astro';
 ---
 
@@ -82,7 +83,26 @@ import Link from '../components/Link.astro';
 								<p>暇な人向け。</p>
 							</div>
 							<H2 title="My Favorite"/>
-							<H3 title="Game"/>
+							<div class="md:mx-12 flex flex-col gap-6 bg-slate-900 px-4 py-3 text-left text-sub break-words max-w-full rounded-lg">
+								<ul class="m-3 list-none pl-6">
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#game">Game</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#comic">Comic</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#tv-series">TV series</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#movie">Movie</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#anime">Anime</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#song">Song</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#music-creator">Music Creator</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#youtuber">YouTuber</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#youtube-video">YouTube Video</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#game-creator">Game Creator</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#illustrator">Illustrator</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#creator-other">Creator (Other)</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#software-engineer">Software Engineer</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#podcast">Podcast</a></li>
+									<li><a class="block hover:bg-slate-800 px-2 py-1 rounded underline text-orange-300" href="#restaurant">Restaurant(Chain Store)</a></li>
+								</ul>
+							</div>
+							<H3 id="game" title="Game"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="Minecraft"/>
 								<OgpLinkCard url="https://www.minecraft.net/ja-jp"/> 
@@ -99,7 +119,7 @@ import Link from '../components/Link.astro';
 								<H4 title="鳴潮"/>
 								<OgpLinkCard url="https://wutheringwaves.kurogames.com/jp/"/> 
 							</div>
-							<H3 title="Comic"/>
+							<H3 id="comic" title="Comic"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="宗教的プログラムの構造と解釈"/>
 								<OgpLinkCard url="https://shonenjumpplus.com/episode/3269754496358577604"/> 
@@ -112,12 +132,12 @@ import Link from '../components/Link.astro';
 								<H4 title="テラリウム"/>
 								<OgpLinkCard url="https://shonenjumpplus.com/episode/17106567261852339358"/> 
 							</div>
-							<H3 title="TV series"/>
+							<H3 id="tv-series" title="TV series"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="SHERLOCK"/>
 								<OgpLinkCard url="https://filmarks.com/dramas/302/1113/vod"/> 
 							</div>
-							<H3 title="Movie"/>
+							<H3 id="movie" title="Movie"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="ウィリーズ・ワンダーランド"/>
 								<OgpLinkCard url="https://filmarks.com/movies/91658"/> 
@@ -126,7 +146,7 @@ import Link from '../components/Link.astro';
 								<H4 title="水の都の護神 ラティアスとラティオス"/>
 								<OgpLinkCard url="https://filmarks.com/movies/25655"/> 
 							</div>
-							<H3 title="Anime"/>
+							<H3 id="anime" title="Anime"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="サマータイムレンダ"/>
 								<OgpLinkCard url="https://filmarks.com/animes/2266/2917"/> 
@@ -137,7 +157,7 @@ import Link from '../components/Link.astro';
 								<H4 title="ノーゲーム・ノーライフ"/>
 								<OgpLinkCard url="https://filmarks.com/animes/338/500"/> 
 							</div>
-							<H3 title="Song"/>
+							<H3 id="song" title="Song"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="The Hamsterdance Song"/>
 								<OgpLinkCard url="https://www.youtube.com/watch?v=p3G5IXn0K7A"/> 
@@ -156,7 +176,7 @@ import Link from '../components/Link.astro';
 								<H4 title="otherside"/>
 								<OgpLinkCard url="https://www.youtube.com/watch?v=kK81m-A3qpU"/> 
 							</div>
-							<H3 title="Artist"/>
+							<H3 id="music-creator" title="Music Creator"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="Aiobahn"/>
 								<OgpLinkCard url="https://www.youtube.com/@Aiobahn"/> 
@@ -169,10 +189,12 @@ import Link from '../components/Link.astro';
 								<H4 title="C418"/>
 								<OgpLinkCard url="https://www.youtube.com/@C418"/> 
 							</div>
-							<H3 title="YouTuber"/>
+							<H3 id="youtuber" title="YouTuber"/>
 							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
 								<H4 title="のばまん"/>
 								<OgpLinkCard url="https://www.youtube.com/@%E3%81%AE%E3%81%B0%E3%81%BE%E3%82%93%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%B9"/> 
+								<H4 title="ゲームさんぽ /よそ見"/>
+								<OgpLinkCard url="https://www.youtube.com/@gamesampo_yosomi"/> 
 								<H4 title="としょ子"/>
 								<OgpLinkCard url="https://www.youtube.com/@TOSHOKO"/> 
 								<H4 title="DALT"/>
@@ -181,6 +203,95 @@ import Link from '../components/Link.astro';
 								<OgpLinkCard url="https://www.youtube.com/@pokopea"/> 
 								<H4 title="Gen"/>
 								<OgpLinkCard url="https://www.youtube.com/@suijiba"/> 
+								<H4 title="Fields Food"/>
+								<OgpLinkCard url="https://www.youtube.com/channel/UCO9s2_k1KMrGFU9SdpybE3Q"/> 
+							</div>
+							<H3 id="youtube-video" title="YouTube Video"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="家を建てずに氷点下150度で野宿させてみた【Frostpunk】"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=YqCrXnqfGlI"/> 
+								<H4 title="裁判長になって殺人しまくり、自らを裁いて無実にするギルド３"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=HGDhQH6XGwk"/> 
+								<H4 title="「ゼロ知識証明」って何？5段階のレベルで説明 | 5 Levels | WIRED.jp"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=eAp2HSjDPPk"/> 
+								<H4 title="The Expert (Short Comedy Sketch)"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=BKorP55Aqvg"/> 
+								<H4 title="This is Create."/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=jDIuWv7ROi8"/> 
+								<H4 title="Death Stranding - Teaser Trailer - TGA 2016 - 4K"/>
+								<OgpLinkCard url="https://www.youtube.com/watch?v=H2Hy96sOnq8"/> 
+							</div>
+							<H3 id="game-creator" title="Game Creator"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="小島秀夫"/>
+								<OgpLinkCard url="https://x.com/kojima_hideo/" title="小島秀夫"/> 
+								<H4 title="notch"/>
+								<OgpLinkCard url="https://x.com/notch" title="notch"/> 
+								<H4 title="tobyfox"/>
+								<OgpLinkCard url="https://x.com/tobyfox" title="tobyfox"/> 
+								<H4 title="OMOCAT"/>
+								<OgpLinkCard url="https://x.com/_omocat" title="OMOCAT"/> 
+								<H4 title="Nikita Buyanov"/>
+								<OgpLinkCard url="https://x.com/nikgeneburn" title="Nikita Buyanov"/> 
+							</div>
+							<H3 id="illustrator" title="Illustrator"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="よしなお"/>
+								<OgpLinkCard url="https://x.com/yoshinao0" title="よしなお"/> 
+								<H4 title="Gaziter"/>
+								<OgpLinkCard url="https://x.com/Gaziter" title="Gaziter"/> 
+								<H4 title="ぼっちゃなゐ"/>
+								<OgpLinkCard url="https://x.com/automatic8" title="ぼっちゃなゐ"/> 
+								<H4 title="昆布わかめ"/>
+								<OgpLinkCard url="https://x.com/aconbwakame" title="昆布わかめ"/> 
+							</div>
+							<H3 id="creator-other" title="Creator (Other)"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="フォッ毛"/>
+								<OgpLinkCard url="https://x.com/Focke_3" title="フォッ毛"/> 
+								<OgpLinkCard url="https://bsky.app/profile/focke3.bsky.social"/> 
+							</div>
+							<H3 id="software-engineer" title="Software Engineer"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="Rui Ueyama"/>
+								<OgpLinkCard url="https://x.com/rui314" title="Rui Ueyama"/> 
+								<H4 title="mattn"/>
+								<OgpLinkCard url="https://x.com/mattn_jp" title="mattn"/> 
+								<H4 title="Daiyuu Nobori (登 大遊)"/>
+								<OgpLinkCard url="https://x.com/dnobori" title="Daiyuu Nobori (登 大遊)"/> 
+								<H4 title="catnose"/>
+								<OgpLinkCard url="https://x.com/catnose99" title="catnose"/> 
+								<H4 title="くまぎ"/>
+								<OgpLinkCard url="https://x.com/kumagi" title="くまぎ"/> 
+							</div>
+							<H3 id="podcast" title="Podcast"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="Rebuild"/>
+								<OgpLinkCard url="https://rebuild.fm/"/> 
+								<H4 title="のばラジ"/>
+								<OgpLinkCard url="https://open.spotify.com/show/7zpAfmsCtVcPM89YDKlvlG"/>
+							</div>
+							<H3 id="restaurant" title="Restaurant(Chain Store)"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="はなまるうどん"/>
+								<OgpLinkCard url="https://www.hanamaruudon.com/"/> 
+								<H4 title="SUBWAY"/>
+								<OgpLinkCard url="https://www.subway.co.jp/index.html"/>
+								<H4 title="BARBACOA"/>
+								<OgpLinkCard url="https://barbacoa.jp/"/>
+								<H4 title="塩元帥"/>
+								<OgpLinkCard url="https://shiogensui.com/"/>
+								<H4 title="やすべえ"/>
+								<OgpLinkCard url="http://www.yasubee.com/"/>
+							</div>
+							<H3 id="web-service" title="Service"/>
+							<div class="md:mx-12 flex flex-col gap-6 text-sm md:text-base">
+								<H4 title="Cloudflare"/>
+								<OgpLinkCard url="https://www.cloudflare.com/"/> 
+								<H4 title="Discord"/>
+								<OgpLinkCard url="https://www.discord.com/"/> 
+								<H4 title="1Password"/>
+								<OgpLinkCard url="https://1password.com/jp"/> 
 							</div>
 						</div>
 					</div>

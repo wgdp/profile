@@ -1,6 +1,7 @@
 ---
 import ogs from 'open-graph-scraper'
 import { isUrl } from '../util/image'
+import { makeImageUrl } from '../util/image'
 
 interface Props {
   url: string
@@ -12,7 +13,8 @@ interface Props {
 const { url, title, image, description } = Astro.props
 
 async function getOpenGraphData(url: string) {
-  const options = { url }
+  // const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36'
+  const options = { url, timeout: 60 }
   try {
     const { result } = await ogs(options)
     return result
@@ -37,20 +39,28 @@ let ogImage = image || websiteData?.ogImage?.[0]?.url || null
 const ogTitle = title || websiteData?.ogTitle || 'タイトルの取得に失敗しました'
 const ogDescription = description || websiteData?.ogDescription || ''
 
-if ( parsedUrl.hostname == "www.amazon.co.jp") {
+if (ogImage == null) {
+  ogImage = makeImageUrl("ogp-test.jpg")
+}
+
+if (parsedUrl.hostname == "www.amazon.co.jp") {
   ogImage = getAmazonImageUrl(parsedUrl)
+}
+let ogImagePath = isUrl(ogImage) ? ogImage : origin + ogImage
+if (parsedUrl.hostname == "x.com") {
+  ogImagePath = "/x.png"
 }
 ---
 
 
-<a href={url} target="_blank" class="me-20 md:me-40 bg-slate-900 hover:bg-slate-800">
-  <div class="grid max-w-full grid-cols-[30%_1fr_5px] gap-4 rounded-md border border-nord-6 text-nord-1 transition-colors duration-200 hover:bg-nord-6">
+<a href={url} target="_blank" class="w-full md:w-[90%] bg-slate-900 rounded-md hover:bg-slate-800">
+  <div class="grid max-w-full grid-cols-[30%_1fr_5px] gap-4 rounded-md border border-slate-400 transition-colors duration-200 hover:bg-nord-6">
     <div class="h-32 overflow-hidden">
-      <img src={isUrl(ogImage) ? ogImage : origin + ogImage} loading="lazy" class="object-cover object-center h-full w-full rounded-s-md"/>
+      <img src={ogImagePath} loading="lazy" class="object-cover object-center h-full w-full rounded-s-md"/>
     </div>
-    <div class="flex flex-col flex-1 py-2 pe-0">
+    <div class="flex flex-col flex-1 py-2 text-wrap">
       <strong class="md:text-lg text-sm font-black text-nord-0 mb-2 line-clamp-1 leading-tight">{ogTitle}</strong>
-      <p class="text-xs md:line-clamp-2 line-clamp-3 leading-tight">{ogDescription}</p>
+      <p class="text-xs line-clamp-3 md:line-clamp-2 leading-tight">{ogDescription}</p>
       <span class="text-xs line-clamp-1 md:mt-5 mt-2">{origin}</span>
     </div>
   </div>
