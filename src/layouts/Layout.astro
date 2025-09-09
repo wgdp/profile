@@ -1,16 +1,24 @@
 ---
 import '../styles/global.css' 
 import Footer from '../components/Footer.astro';
+import Head from '../components/Head.astro';
+import type { Ogp } from '../types/Ogp';
+import { DEFAULT_THUMBNAIL } from '../util/const';
+
+const { url } = Astro.props;
+
+const ogp:Ogp = {
+    title: "uidolaのプロフィール",
+    description: "uidolaのプロフィール",
+    thumbnail: DEFAULT_THUMBNAIL,
+    url: url,
+    pageType: "website"
+}
+
 ---
 <!doctype html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>uidolaのプロフィール</title>
-	</head>
+	<Head ogp={ogp}/>
 	<body class="bg-sub bg-fixed tracking-wider">
 		<slot />
 		<Footer/>
