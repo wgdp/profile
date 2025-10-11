@@ -3,14 +3,14 @@ import '../styles/global.css'
 import Footer from '../components/Footer.astro';
 import Head from '../components/Head.astro';
 import type { Ogp } from '../types/Ogp';
-import { DEFAULT_THUMBNAIL } from '../util/const';
+import { UIDOLA_THUMBNAIL } from '../util/const';
 
 const { url } = Astro.props;
 
 const ogp:Ogp = {
     title: "uidolaのプロフィール",
     description: "uidolaのプロフィール",
-    thumbnail: DEFAULT_THUMBNAIL,
+    thumbnail: UIDOLA_THUMBNAIL,
     url: url,
     pageType: "website"
 }
