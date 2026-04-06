@@ -1,26 +1,26 @@
 ---
-import '../styles/global.css' 
-import Footer from '../components/Footer.astro';
-import Head from '../components/Head.astro';
-import type { Ogp } from '../types/Ogp';
-import { UIDOLA_THUMBNAIL } from '../util/const';
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import type { Ogp } from "../types/Ogp";
+import { UIDOLA_THUMBNAIL } from "../util/const";
 
 const { url } = Astro.props;
 
-const ogp:Ogp = {
-    title: "uidolaのプロフィール",
-    description: "uidolaのプロフィール",
-    thumbnail: UIDOLA_THUMBNAIL,
-    url: url,
-    pageType: "website"
-}
-
+const ogp: Ogp = {
+  title: "uidolaのプロフィール",
+  description: "uidolaのプロフィール",
+  thumbnail: UIDOLA_THUMBNAIL,
+  url: url,
+  pageType: "website",
+};
 ---
+
 <!doctype html>
-<html lang="ja">
-	<Head ogp={ogp}/>
-	<body class="bg-sub bg-fixed tracking-wider">
-		<slot />
-		<Footer/>
-	</body>
+<html lang="ja" class="overflow-x-hidden">
+  <Head ogp={ogp} />
+  <body class="bg-sub bg-fixed tracking-wider overflow-x-hidden">
+    <slot />
+    <Footer />
+  </body>
 </html>
